@@ -1,4 +1,4 @@
-import FileUploader from "./components/FileUploader";
+import FileUploader from "./lib/components/uploader";
 import "./App.css";
 
 function App() {

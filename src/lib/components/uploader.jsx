@@ -15,13 +15,12 @@ const FileUploader = ({ handleFile }) => {
   const hiddenFileInput = useRef(null);
   const [fileName, setFileName] = useState("");
 
-  const handleClick = (event) => {
+  const handleClick = () => {
     hiddenFileInput.current.click();
   };
 
   const handleChange = (event) => {
     const fileUploaded = event.target.files[0];
-    console.log(fileUploaded);
     setFileName(fileUploaded.name);
     handleFile(fileUploaded);
   };
