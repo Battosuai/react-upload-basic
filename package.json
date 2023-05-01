@@ -1,7 +1,7 @@
 {
   "name": "react-upload-basic",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "Test Package",
   "author": "MD. Asifur Rahman",
@@ -13,9 +13,14 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/react-upload-basic.es.js",
+      "require": "./dist/react-upload-basic.umd.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Battosuai/react-upload-basic"
@@ -24,25 +29,28 @@
     "dev": "vite",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files"
+    "build": "vite build"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.10"
+  },
+  "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.10"
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.5",
-    "@babel/core": "^7.21.5",
-    "@babel/preset-env": "^7.21.5",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "vite": "^4.3.2"
-  }
+  },
+  "license": "MIT"
 }
